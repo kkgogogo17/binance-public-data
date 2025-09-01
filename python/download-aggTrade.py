@@ -106,7 +106,7 @@ if __name__ == "__main__":
     else:
       period = convert_to_date_object(datetime.today().strftime('%Y-%m-%d')) - convert_to_date_object(
         PERIOD_START_DATE)
-      dates = pd.date_range(end=datetime.today(), periods=period.days + 1).to_pydatetime().tolist()
+      dates = pd.date_range(end=datetime.today(), periods=period.days + 1).tolist()
       dates = [date.strftime("%Y-%m-%d") for date in dates]
       if args.skip_monthly == 0:
         download_monthly_aggTrades(args.type, symbols, num_symbols, args.years, args.months, args.startDate, args.endDate, args.folder, args.checksum)
